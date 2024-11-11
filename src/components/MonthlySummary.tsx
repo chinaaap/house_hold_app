@@ -6,6 +6,7 @@ import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import { theme } from '../theme/theme';
 import { Transaction } from '../types';
 import { financeCalculation } from '../utils/financeCalculation';
+import { formatCurrency } from '../utils/formatting';
 
 interface MonthlySummaryProps {
     monthlyTransactions: Transaction[],
@@ -35,7 +36,7 @@ const MonthlySummary = ({ monthlyTransactions }: MonthlySummaryProps) => {
                             variant='h5'
                             fontWeight={"fontWeightBold"}
                             sx={{ wordBreak: "break-word", fontSize: { xs: ".8rem", sm: "1rem", md: "1.2rem" }, }}
-                        >￥{income}</Typography>
+                        >¥{formatCurrency(income)}</Typography>
                     </CardContent>
                 </Card>
             </Grid>
@@ -58,7 +59,7 @@ const MonthlySummary = ({ monthlyTransactions }: MonthlySummaryProps) => {
                             variant='h5'
                             fontWeight={"fontWeightBold"}
                             sx={{ wordBreak: "break-word", fontSize: { xs: ".8rem", sm: "1rem", md: "1.2rem" }, }}
-                        >￥{expense}</Typography>
+                        >¥{formatCurrency(expense)}</Typography>
                     </CardContent>
                 </Card>
             </Grid>
@@ -81,7 +82,7 @@ const MonthlySummary = ({ monthlyTransactions }: MonthlySummaryProps) => {
                             variant='h5'
                             fontWeight={"fontWeightBold"}
                             sx={{ wordBreak: "break-word", fontSize: { xs: ".8rem", sm: "1rem", md: "1.2rem" }, }}
-                        >￥{balance}</Typography>
+                        >¥{formatCurrency(balance)}</Typography>
                     </CardContent>
                 </Card>
             </Grid>

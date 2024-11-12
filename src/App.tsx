@@ -128,6 +128,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
+      {/* <AppContextProvider value={transactions}> */}
       <CssBaseline />
       <Router>
         <Routes>
@@ -151,6 +152,7 @@ function App() {
           </Route>
         </Routes>
       </Router>
+      {/* </AppContextProvider> */}
     </ThemeProvider>
   );
 };
